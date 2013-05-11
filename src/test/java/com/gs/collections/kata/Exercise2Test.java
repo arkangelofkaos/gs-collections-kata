@@ -22,11 +22,9 @@ import com.gs.collections.impl.test.Verify;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Exercise2Test extends CompanyDomainForKata
-{
+public class Exercise2Test extends CompanyDomainForKata {
     @Test
-    public void getCustomerNames()
-    {
+    public void getCustomerNames() {
         /**
          * Get the name of each of the company's customers. This time move the {@link Function} to a
          * constant on {@link Customer}.
@@ -38,8 +36,7 @@ public class Exercise2Test extends CompanyDomainForKata
     }
 
     @Test
-    public void getCustomerCities()
-    {
+    public void getCustomerCities() {
         /**
          * Get the city for each of the company's customers. This time move the {@link Function} to a
          * constant on {@link Customer}.
@@ -51,8 +48,7 @@ public class Exercise2Test extends CompanyDomainForKata
     }
 
     @Test
-    public void getLondonCustomers()
-    {
+    public void getLondonCustomers() {
         MutableList<Customer> customersFromLondon = null;
         Verify.assertSize("Should be 2 London customers", 2, customersFromLondon);
     }

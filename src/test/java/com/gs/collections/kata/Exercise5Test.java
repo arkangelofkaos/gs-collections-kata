@@ -16,8 +16,6 @@
 
 package com.gs.collections.kata;
 
-import java.util.List;
-
 import com.gs.collections.api.block.predicate.Predicate;
 import com.gs.collections.api.list.MutableList;
 import com.gs.collections.impl.list.mutable.FastList;
@@ -26,15 +24,15 @@ import com.gs.collections.impl.utility.Iterate;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Exercise5Test extends CompanyDomainForKata
-{
+import java.util.List;
+
+public class Exercise5Test extends CompanyDomainForKata {
     /**
      * Solve this without changing the return type of {@link Company#getSuppliers()}. Find the appropriate method on
      * {@link ArrayIterate}.
      */
     @Test
-    public void findSupplierNames()
-    {
+    public void findSupplierNames() {
         MutableList<String> supplierNames = null;
 
         MutableList<String> expectedSupplierNames = FastList.newListWith(
@@ -53,8 +51,7 @@ public class Exercise5Test extends CompanyDomainForKata
      * satisfy that Predicate.
      */
     @Test
-    public void countSuppliersWithMoreThanTwoItems()
-    {
+    public void countSuppliersWithMoreThanTwoItems() {
         Predicate<Supplier> moreThanTwoItems = null;
         int suppliersWithMoreThanTwoItems = 0;
         Assert.assertEquals("suppliers with more than 2 items", 5, suppliersWithMoreThanTwoItems);
@@ -64,8 +61,7 @@ public class Exercise5Test extends CompanyDomainForKata
      * Try to solve this without changing the return type of {@link Supplier#getItemNames()}.
      */
     @Test
-    public void whoSuppliesSandwichToaster()
-    {
+    public void whoSuppliesSandwichToaster() {
         // Create a Predicate that will check to see if a Supplier supplies a "sandwich toaster".
         Predicate<Supplier> suppliesToaster = null;
 
@@ -76,8 +72,7 @@ public class Exercise5Test extends CompanyDomainForKata
     }
 
     @Test
-    public void filterOrderValues()
-    {
+    public void filterOrderValues() {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         /**
          * Get the order values that are greater than 1.5.
@@ -88,8 +83,7 @@ public class Exercise5Test extends CompanyDomainForKata
     }
 
     @Test
-    public void filterOrders()
-    {
+    public void filterOrders() {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         /**
          * Get the actual orders (not their double values) where those orders have a value greater than 2.0.

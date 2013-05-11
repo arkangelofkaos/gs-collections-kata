@@ -16,8 +16,6 @@
 
 package com.gs.collections.kata;
 
-import java.util.List;
-
 import com.gs.collections.api.list.MutableList;
 import com.gs.collections.impl.block.factory.Predicates;
 import com.gs.collections.impl.list.mutable.FastList;
@@ -26,11 +24,11 @@ import com.gs.collections.impl.utility.Iterate;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Exercise6Test extends CompanyDomainForKata
-{
+import java.util.List;
+
+public class Exercise6Test extends CompanyDomainForKata {
     @Test
-    public void filterOrderValues()
-    {
+    public void filterOrderValues() {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         /**
          * Same exercise but don't use static utility - refactor the type of orders and {@link Customer#getOrders()}
@@ -46,8 +44,7 @@ public class Exercise6Test extends CompanyDomainForKata
     }
 
     @Test
-    public void filterOrders()
-    {
+    public void filterOrders() {
         List<Order> orders = this.company.getMostRecentCustomer().getOrders();
         /**
          * Same exercise but don't use static utility - refactor the type of orders and {@link Customer#getOrders()}

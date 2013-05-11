@@ -25,14 +25,12 @@ import com.gs.collections.impl.test.Verify;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Exercise9Test extends CompanyDomainForKata
-{
+public class Exercise9Test extends CompanyDomainForKata {
     /**
      * Extra credit. Figure out which customers ordered saucers (in any of their orders).
      */
     @Test
-    public void whoOrderedSaucers()
-    {
+    public void whoOrderedSaucers() {
         MutableList<Customer> customersWithSaucers = null;
         Verify.assertSize("customers with saucers", 2, customersWithSaucers);
     }
@@ -41,8 +39,7 @@ public class Exercise9Test extends CompanyDomainForKata
      * Extra credit. Look into the {@link MutableList#toMap(Function, Function)} method.
      */
     @Test
-    public void ordersByCustomerUsingAsMap()
-    {
+    public void ordersByCustomerUsingAsMap() {
         MutableMap<String, MutableList<Order>> customerNameToOrders =
                 this.company.getCustomers().toMap(null, null);
 
@@ -57,8 +54,7 @@ public class Exercise9Test extends CompanyDomainForKata
      * the most expensive item that the customer ordered.
      */
     @Test
-    public void mostExpensiveItem()
-    {
+    public void mostExpensiveItem() {
         MutableListMultimap<Double, Customer> multimap = null;
         Assert.assertEquals(3, multimap.size());
         Assert.assertEquals(2, multimap.keysView().size());

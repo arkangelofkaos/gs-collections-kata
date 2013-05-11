@@ -16,25 +16,22 @@
 
 package com.gs.collections.kata;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import com.gs.collections.api.block.function.Function;
 import com.gs.collections.api.list.MutableList;
 import com.gs.collections.impl.block.function.AddFunction;
 import com.gs.collections.impl.utility.ListIterate;
 import org.junit.Assert;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Customers have a name, city and a list of {@link Order}s
  */
-public class Customer
-{
-    public static final Function<Customer, String> TO_NAME = new Function<Customer, String>()
-    {
+public class Customer {
+    public static final Function<Customer, String> TO_NAME = new Function<Customer, String>() {
         @Override
-        public String valueOf(Customer customer)
-        {
+        public String valueOf(Customer customer) {
             Assert.fail("Replace with the implementation of the Function.");
             return null;
         }
@@ -43,11 +40,9 @@ public class Customer
     public static final Function<Customer, String> TO_CITY = null;
 
     public static final Function<Customer, Double> TO_TOTAL_ORDER_VALUE =
-            new Function<Customer, Double>()
-            {
+            new Function<Customer, Double>() {
                 @Override
-                public Double valueOf(Customer customer)
-                {
+                public Double valueOf(Customer customer) {
                     return customer.getTotalOrderValue();
                 }
             };
@@ -57,39 +52,31 @@ public class Customer
 
     private final List<Order> orders = new ArrayList<Order>();
 
-    public Customer(String name, String city)
-    {
+    public Customer(String name, String city) {
         this.name = name;
         this.city = city;
     }
 
-    public String getCity()
-    {
+    public String getCity() {
         return this.city;
     }
 
-    public String getName()
-    {
+    public String getName() {
         return this.name;
     }
 
-    public List<Order> getOrders()
-    {
+    public List<Order> getOrders() {
         return this.orders;
     }
 
-    public void addOrder(Order anOrder)
-    {
+    public void addOrder(Order anOrder) {
         this.orders.add(anOrder);
     }
 
-    public double getTotalOrderValue()
-    {
-        MutableList<Double> orderValues = ListIterate.collect(this.orders, new Function<Order, Double>()
-        {
+    public double getTotalOrderValue() {
+        MutableList<Double> orderValues = ListIterate.collect(this.orders, new Function<Order, Double>() {
             @Override
-            public Double valueOf(Order order)
-            {
+            public Double valueOf(Order order) {
                 return order.getValue();
             }
         });

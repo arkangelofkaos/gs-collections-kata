@@ -22,15 +22,13 @@ import com.gs.collections.impl.test.Verify;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class Exercise7Test extends CompanyDomainForKata
-{
+public class Exercise7Test extends CompanyDomainForKata {
     /**
      * Get a list of the customers' total order values, sorted. Check out the implementation of {@link
      * Customer#getTotalOrderValue()} and {@link Order#getValue()} .
      */
     @Test
-    public void sortedTotalOrderValue()
-    {
+    public void sortedTotalOrderValue() {
         MutableList<Double> sortedTotalValues = null;
 
         // Don't forget the handy utility methods getFirst() and getLast()...
@@ -42,8 +40,7 @@ public class Exercise7Test extends CompanyDomainForKata
      * Find the max total order value across all customers.
      */
     @Test
-    public void maximumTotalOrderValue()
-    {
+    public void maximumTotalOrderValue() {
         Double maximumTotalOrderValue = null;
         Assert.assertEquals("max value", Double.valueOf(857.0), maximumTotalOrderValue);
     }
@@ -52,8 +49,7 @@ public class Exercise7Test extends CompanyDomainForKata
      * Find the customer with the highest total order value.
      */
     @Test
-    public void customerWithMaxTotalOrderValue()
-    {
+    public void customerWithMaxTotalOrderValue() {
         Customer customerWithMaxTotalOrderValue = null;
         Assert.assertEquals(this.company.getCustomerNamed("Mary"), customerWithMaxTotalOrderValue);
     }
@@ -62,8 +58,7 @@ public class Exercise7Test extends CompanyDomainForKata
      * Create some code to get the company's supplier names as a tilde delimited string.
      */
     @Test
-    public void supplierNamesAsTildeDelimitedString()
-    {
+    public void supplierNamesAsTildeDelimitedString() {
         String tildeSeparatedNames = null;
         Assert.assertEquals(
                 "tilde separated names",
@@ -77,8 +72,7 @@ public class Exercise7Test extends CompanyDomainForKata
      * @see Order#deliver()
      */
     @Test
-    public void deliverOrdersToLondon()
-    {
+    public void deliverOrdersToLondon() {
         Verify.assertAllSatisfy(this.company.getCustomerNamed("Fred").getOrders(), Order.IS_DELIVERED);
         Verify.assertAllSatisfy(this.company.getCustomerNamed("Mary").getOrders(), Predicates.not(Order.IS_DELIVERED));
         Verify.assertAllSatisfy(this.company.getCustomerNamed("Bill").getOrders(), Order.IS_DELIVERED);
