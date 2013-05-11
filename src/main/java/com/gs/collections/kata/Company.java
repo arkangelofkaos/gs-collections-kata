@@ -46,13 +46,10 @@ public class Company {
     }
 
     public MutableList<Order> getOrders() {
-        MutableList<Order> orders = FastList.newList();
-
-        orders.addAll(
+        MutableList<Order> orders =
                 customers.flatCollect(
                         Customer::getOrders
-                )
-        );
+                );
 
         return orders;
     }
