@@ -25,7 +25,6 @@ import org.junit.Test;
 public class Exercise1Test extends CompanyDomainForKata {
     @Test
     public void getCustomerNames() {
-
         /**
          * Get the name of each of the company's customers.
          */
@@ -45,7 +44,8 @@ public class Exercise1Test extends CompanyDomainForKata {
          * ctrl+i in IntelliJ. Eclipse's ctrl+1 is auto-fix and works to implement interfaces.
          */
         MutableList<Customer> customers = this.company.getCustomers();
-        MutableList<String> customerCities = null;
+
+        MutableList<String> customerCities = customers.collect(Customer::getCity);
 
         MutableList<String> expectedCities = FastList.newListWith("London", "Liphook", "London");
         Assert.assertEquals(expectedCities, customerCities);
@@ -57,7 +57,9 @@ public class Exercise1Test extends CompanyDomainForKata {
          * Which customers come from London? Get a collection of those which do. Use an anonymous inner class.
          */
         MutableList<Customer> customers = this.company.getCustomers();
-        MutableList<Customer> customersFromLondon = null;
+        MutableList<Customer> customersFromLondon =
+                customers.select(customer -> customer.getCity().equalsIgnoreCase("London"));
+
         Verify.assertSize("Should be 2 London customers", 2, customersFromLondon);
     }
 }
